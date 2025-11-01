@@ -9,8 +9,8 @@ import os
 # ==============================
 # 1️⃣ 기본 설정
 # ==============================
-access = ""
-secret = ""
+access = "lSWxkEmAF73kGsf4xQSgvE7dh1mu16O0R1LTYWWR"
+secret = "OEgT6ziEoNHl3AeDfXHgxXIHj9ZvGxvD4hVcuaLO"
 market = "KRW-VIRTUAL"  # 거래 마켓
 interval = "minute3"
 count = 2000
@@ -20,8 +20,8 @@ log_file = "trade_log.csv"
 # ==============================
 # 2️⃣ 텔레그램 설정
 # ==============================
-telegram_token = ""
-telegram_chat_id = ""
+telegram_token = "8240460505:AAGmA8nHxsTNYYn6E3rMGR_ZO9JyfF-clcQ"
+telegram_chat_id = "7906626308"
 
 def send_telegram(msg):
     try:
