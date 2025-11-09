@@ -103,7 +103,7 @@ def get_data():
         (df['MA3'] > df['MA5']) &
         (df['MA5'] > df['MA9']) &
         (df['MA9'] > df['MA20']) &
-        (((df['MA9'].shift(2)-df['MA20'].shift(2))/(df['MA9']-df['MA20'])) <  1)
+        (((df['MA9'].shift(1)-df['MA20'].shift(1))/(df['MA9']-df['MA20'])) <  1)
         )
     
     df.loc[df['Market_Trend'] == "횡보장", 'Sell_Signal'] = (False)
