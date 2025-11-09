@@ -13,8 +13,8 @@ access = "lSWxkEmAF73kGsf4xQSgvE7dh1mu16O0R1LTYWWR"
 secret = "OEgT6ziEoNHl3AeDfXHgxXIHj9ZvGxvD4hVcuaLO"
 market = "KRW-VIRTUAL"  # 거래 마켓
 interval = "minute1"
-count = 200
-trade_amount = 100000   # 매수 금액 (원화)
+count = 300
+trade_amount = 1000000   # 매수 금액 (원화)
 log_file = "trade_log.csv"
 
 # ==============================
@@ -211,8 +211,8 @@ while True:
 
         # ✅ 상태 출력 및 알림
         log_msg = (
-            f"PC_{datetime.datetime.now()} | {market} | {market_trend} | "
-            f"MA9: {latest['MA9']:.1f} MA20: {latest['MA20']:.1f} MA40: {latest['MA40']:.1f} | "
+            f"AWS1_{datetime.datetime.now()} | {market} | {market_trend} | "
+            f"MA3: {latest['MA3']:.1f} MA5: {latest['MA5']:.1f} MA9: {latest['MA9']:.1f} | "
             f"현재가: {current_price:.0f} | 수익률: {profit_pct if in_position else 0:.2f}% | "
             f"최고수익률: {max_profit_pct:.2f}% | 포지션: {'보유중' if in_position else '대기중'}"
         )
