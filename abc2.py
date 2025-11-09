@@ -93,6 +93,9 @@ def get_data():
         (((df['MA9'].shift(1)-df['MA20'].shift(1))/(df['MA9']-df['MA20'])) <  1)
         )
     
+    df.loc[df['Market_Trend'] == "상승장", 'Sell_Signal'] = (False        
+    )
+    
 
     df.loc[df['Market_Trend'] == "횡보장", 'Buy_Signal'] = (
         # ((df['close'] > df['MA3']) &
@@ -104,6 +107,8 @@ def get_data():
         (((df['MA9'].shift(2)-df['MA20'].shift(2))/(df['MA9']-df['MA20'])) <  1)
         )
     
+    df.loc[df['Market_Trend'] == "횡보장", 'Sell_Signal'] = (False)
+    
 
     df.loc[df['Market_Trend'] == "하락장", 'Buy_Signal'] = ( False
         # ((df['close'] > df['MA3']) &
@@ -111,6 +116,8 @@ def get_data():
         # (df['MA5'] > df['MA9']) &
         # (df['MA9'] > df['MA20']) 
         )
+    
+    df.loc[df['Market_Trend'] == "하락장", 'Sell_Signal'] = (False)
 
     return df
 
@@ -213,7 +220,7 @@ while True:
         print(log_msg)
         send_telegram(log_msg)
 
-        time.sleep(10)
+        time.sleep(60)
 
     except Exception as e:
         print("⚠️ 오류 발생:", e)
