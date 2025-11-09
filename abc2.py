@@ -142,8 +142,8 @@ max_profit_pct = 0  # 최고 수익률 추적
 
 # 장세별 수익 / 손절 / 트레일링 스탑 기준 (%)
 profit_targets = {"상승장": 3, "횡보장": 3, "하락장": 3}
-stop_losses = {"상승장": -0.5, "횡보장": -0.5, "하락장": -0.5}
-trailing_gaps = {"상승장": 0.5, "횡보장": 0.5, "하락장": 0.5}
+stop_losses = {"상승장": -0.3, "횡보장": -0.3, "하락장": -0.5}
+trailing_gaps = {"상승장": 0.2, "횡보장": 0.2, "하락장": 0.5}
 
 while True:
     try:
@@ -219,7 +219,7 @@ while True:
         print(log_msg)
         send_telegram(log_msg)
 
-        time.sleep(60)
+        time.sleep(20)
 
     except Exception as e:
         print("⚠️ 오류 발생:", e)
