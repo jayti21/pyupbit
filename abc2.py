@@ -20,11 +20,11 @@ log_file = "trade_log.csv"
 # ==============================
 # 2️⃣ 텔레그램 설정
 # ==============================
-# telegram_token = "8240460505:AAGmA8nHxsTNYYn6E3rMGR_ZO9JyfF-clcQ"  ##BOT_1
-# telegram_chat_id = "7906626308"
-
-telegram_token = "8542911616:AAHjHJ-nK3k0iaNY2QVjMUvhD18TA4Fr15c" ## BOT_2
+telegram_token = "8240460505:AAGmA8nHxsTNYYn6E3rMGR_ZO9JyfF-clcQ"  ##BOT_1
 telegram_chat_id = "7906626308"
+
+# telegram_token = "8542911616:AAHjHJ-nK3k0iaNY2QVjMUvhD18TA4Fr15c" ## BOT_2
+# telegram_chat_id = "7906626308"
 
 def send_telegram(msg):
     """텔레그램 메시지 전송"""
