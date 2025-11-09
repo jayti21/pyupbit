@@ -85,22 +85,21 @@ def get_data():
         # ((df['MA9'].shift(1) < df['MA20'].shift(1)) &
         # (df['MA9'] > df['MA20']) &) |
         # ((df['close'] > df['MA3']) &
-        (df['close'].shift(2) > df['close'].shift(1)) &
-        (df['close'].shift(1) > df['close']) &
+        # (df['close'].shift(2) > df['close'].shift(1)) &
+        # (df['close'].shift(1) < df['close']) &
         (df['MA3'] > df['MA5']) &
         (df['MA5'] > df['MA9']) &
         (df['MA9'] > df['MA20']) &
         (((df['MA9'].shift(1)-df['MA20'].shift(1))/(df['MA9']-df['MA20'])) <  1)
         )
     
-    df.loc[df['Market_Trend'] == "상승장", 'Sell_Signal'] = (False        
-    )
+    df.loc[df['Market_Trend'] == "상승장", 'Sell_Signal'] = (False)
     
 
     df.loc[df['Market_Trend'] == "횡보장", 'Buy_Signal'] = (
         # ((df['close'] > df['MA3']) &
-        (df['close'].shift(2) > df['close'].shift(1)) &
-        (df['close'].shift(1) > df['close']) &
+        # (df['close'].shift(2) < df['close'].shift(1)) &
+        # (df['close'].shift(1) < df['close']) &
         (df['MA3'] > df['MA5']) &
         (df['MA5'] > df['MA9']) &
         (df['MA9'] > df['MA20']) &
@@ -110,7 +109,7 @@ def get_data():
     df.loc[df['Market_Trend'] == "횡보장", 'Sell_Signal'] = (False)
     
 
-    df.loc[df['Market_Trend'] == "하락장", 'Buy_Signal'] = ( False
+    df.loc[df['Market_Trend'] == "하락장", 'Buy_Signal'] = (False
         # ((df['close'] > df['MA3']) &
         # (df['MA3'] > df['MA5']) &
         # (df['MA5'] > df['MA9']) &
